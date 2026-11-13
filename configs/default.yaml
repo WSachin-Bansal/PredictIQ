@@ -1,0 +1,63 @@
+seed: 42
+
+sensor:
+  window: 50          # timesteps per window
+  stride: 5
+  n_features: 14      # C-MAPSS after dropping constant sensors
+  hidden: 64
+  layers: 2
+  dropout: 0.2
+  embed_dim: 128
+
+vision:
+  backbone: resnet18  # resnet18 | mobilenet_v3_small
+  pretrained: true
+  image_size: 224
+  embed_dim: 128
+  freeze_backbone: true
+
+audio:
+  sample_rate: 16000
+  clip_seconds: 2.0
+  n_fft: 1024
+  hop_length: 512
+  n_mels: 64
+  embed_dim: 128
+
+fusion:
+  mode: concat        # concat | weighted | attention
+  hidden: 256
+  dropout: 0.3
+  n_classes: 4        # e.g. normal + 3 fault types
+  modality_dropout: 0.2   # randomly zero a modality in training
+
+loss_weights:         # lambda_1, lambda_2, lambda_3 in Eq. (2)
+  fault: 1.0
+  failure: 1.0
+  rul: 0.5
+
+rul:
+  max_rul: 125        # piecewise-linear RUL cap (standard on C-MAPSS)
+
+train:
+  batch_size: 64
+  lr: 0.001
+  epochs: 30
+  weight_decay: 0.0001
+
+mafaulda:             # real aligned sensor + audio dataset (see README)
+  fs: 50000           # original sampling rate of every CSV channel
+  vib_rate: 10000     # vibration decimated to this rate
+  audio_rate: 16000   # microphone resampled to this rate
+  win_seconds: 1.0
+  stride_seconds: 0.5
+  n_vib_channels: 6   # 2 triaxial accelerometers (tachometer excluded)
+  n_severity: 3       # low / mid / high bucket within each fault class
+  embed_dim: 128
+  hidden: 256
+  dropout: 0.3
+  modality_dropout: 0.2
+  epochs: 20
+  batch_size: 64
+  lr: 0.001
+  split_seed: 42
