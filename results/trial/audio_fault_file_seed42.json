@@ -1,0 +1,186 @@
+{
+  "args": {
+    "mode": "audio",
+    "processed": "data/processed/mafaulda",
+    "config": "configs/default.yaml",
+    "task": "fault",
+    "split": "file",
+    "split_seed": null,
+    "seed": 42,
+    "epochs": 3,
+    "batch_size": null,
+    "lr": null,
+    "num_workers": 0,
+    "out": "results"
+  },
+  "split_sizes": {
+    "train": 1169,
+    "val": 391,
+    "test": 391
+  },
+  "classes": [
+    "horizontal-misalignment",
+    "imbalance",
+    "normal",
+    "overhang_ball_fault",
+    "overhang_cage_fault",
+    "overhang_outer_race",
+    "underhang_ball_fault",
+    "underhang_cage_fault",
+    "underhang_outer_race",
+    "vertical-misalignment"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.090964157458279,
+      "val_f1": 0.303673941739019,
+      "val_acc": 0.41545893719806765,
+      "val_file_acc": 0.41687979539641945
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.2989884230950273,
+      "val_f1": 0.37337083026692436,
+      "val_acc": 0.46717817561807334,
+      "val_file_acc": 0.4833759590792839
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.0360944356180486,
+      "val_f1": 0.4719857501330604,
+      "val_acc": 0.5706166524580847,
+      "val_file_acc": 0.5703324808184144
+    }
+  ],
+  "test": {
+    "accuracy": 0.5723216822961068,
+    "precision": 0.5094181433411146,
+    "recall": 0.5225029538034687,
+    "f1": 0.4791295908339843,
+    "file_accuracy": 0.5728900255754475,
+    "severity_accuracy": 0.5231846019247594,
+    "confusion_matrix": [
+      [
+        133,
+        10,
+        0,
+        1,
+        41,
+        98,
+        22,
+        0,
+        45,
+        1
+      ],
+      [
+        37,
+        272,
+        0,
+        5,
+        22,
+        20,
+        79,
+        44,
+        120,
+        4
+      ],
+      [
+        6,
+        48,
+        0,
+        1,
+        0,
+        0,
+        14,
+        0,
+        21,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        94,
+        0,
+        0,
+        131,
+        0,
+        18,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        334,
+        0,
+        4,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        285,
+        42,
+        12,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        293,
+        0,
+        40,
+        0
+      ],
+      [
+        0,
+        103,
+        0,
+        87,
+        0,
+        0,
+        17,
+        94,
+        41,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        19,
+        0,
+        314,
+        0
+      ],
+      [
+        60,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        42,
+        438
+      ]
+    ]
+  }
+}
