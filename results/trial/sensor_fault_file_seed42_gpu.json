@@ -1,0 +1,186 @@
+{
+  "args": {
+    "mode": "sensor",
+    "processed": "data/processed/mafaulda",
+    "config": "configs/default.yaml",
+    "task": "fault",
+    "split": "file",
+    "split_seed": null,
+    "seed": 42,
+    "epochs": 3,
+    "batch_size": null,
+    "lr": null,
+    "num_workers": 0,
+    "out": "results"
+  },
+  "split_sizes": {
+    "train": 1169,
+    "val": 391,
+    "test": 391
+  },
+  "classes": [
+    "horizontal-misalignment",
+    "imbalance",
+    "normal",
+    "overhang_ball_fault",
+    "overhang_cage_fault",
+    "overhang_outer_race",
+    "underhang_ball_fault",
+    "underhang_cage_fault",
+    "underhang_outer_race",
+    "vertical-misalignment"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.1992925016466016,
+      "val_f1": 0.8187064742620744,
+      "val_acc": 0.863029269678886,
+      "val_file_acc": 0.8721227621483376
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.5343650747315419,
+      "val_f1": 0.8204048904518226,
+      "val_acc": 0.8829212844558113,
+      "val_file_acc": 0.8925831202046036
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.3550436666523727,
+      "val_f1": 0.9730511629638663,
+      "val_acc": 0.9784029553850526,
+      "val_file_acc": 0.9769820971867008
+    }
+  ],
+  "test": {
+    "accuracy": 0.9698778061949418,
+    "precision": 0.9672978017342733,
+    "recall": 0.9664380862220611,
+    "f1": 0.9667170751049398,
+    "file_accuracy": 0.9718670076726342,
+    "severity_accuracy": 0.7955672207640712,
+    "confusion_matrix": [
+      [
+        320,
+        0,
+        8,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        18
+      ],
+      [
+        0,
+        583,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20
+      ],
+      [
+        8,
+        0,
+        81,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        243,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        0,
+        0,
+        0,
+        327,
+        9,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        11,
+        1,
+        0,
+        0,
+        0,
+        330,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        333,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        342,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        333,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        18,
+        0,
+        521
+      ]
+    ]
+  }
+}
