@@ -34,7 +34,7 @@ def main():
         return
     g = df.groupby(["task", "split", "mode", "input"])
     out = g[METRICS].agg(["mean", "std"]).round(4)
-    out.insert(0, "n_seeds", g.size())
+    out.insert(0, ("n_seeds", ""), g.size())
     print(out.to_string())
     try:  # needs the optional `tabulate` package
         print("\nMarkdown:\n")

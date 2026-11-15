@@ -11,6 +11,8 @@ file with the pull request that introduces the result. Never edit old rows; add 
 | 2026-11-14 | Sachin | feature/full-runs-seed1 | sensor | file | 1 | 0.9886 | 0.9853 | 0.9872 | 20 epochs, batch 32, GPU RTX 2050 |
 | 2026-11-14 | Sachin | feature/full-runs-seed1 | audio | file | 1 | 0.8255 | 0.8014 | 0.8440 | 20 epochs, batch 32, GPU RTX 2050 |
 | 2026-11-14 | Sachin | feature/full-runs-seed1 | fusion | file | 1 | 0.9932 | 0.9929 | 0.9949 | 20 epochs, batch 32, GPU RTX 2050; sensor hidden acc 0.7292, audio hidden acc 0.9739 |
+
+
 ## Summary table for the report (mean +- std over seeds)
 
 | Config | Split | Accuracy | Macro-F1 | Sensor hidden | Audio hidden |
