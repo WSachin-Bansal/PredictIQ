@@ -62,3 +62,17 @@ def summary_table(task: str = "fault") -> pd.DataFrame:
 
 def load_rul_runs() -> list[dict]:
     return [json.loads(p.read_text()) | {"file": p.name} for p in sorted(RESULTS.glob("rul_*_seed*.json"))]
+
+
+# ---------------------------------------------------------------- processed MAFAULDA data
+def load_index() -> pd.DataFrame:
+    """index.csv of the preprocessed dataset (one row per recording)."""
+    return pd.read_csv(PROCESSED / "index.csv", dtype={"severity_label": str})
+
+
+def load_recording(key: str):
+    """(vib (N, 6, 10000) float32 at 10 kHz, audio (N, 16000) float32 at 16 kHz); N = 9 windows."""
+    import numpy as np
+    vib = np.load(PROCESSED / "vib" / f"{key}.npy").astype("float32")
+    aud = np.load(PROCESSED / "aud" / f"{key}.npy").astype("float32")
+    return vib, aud
