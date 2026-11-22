@@ -1,0 +1,1280 @@
+{
+  "args": {
+    "root": "data/raw/mvtec",
+    "categories": [
+      "bottle",
+      "screw"
+    ],
+    "config": "configs/default.yaml",
+    "seed": 3,
+    "epochs": 15,
+    "batch_size": 32,
+    "lr": 0.001,
+    "backbone_lr": 0.0001,
+    "no_pretrained": false,
+    "device": "auto",
+    "out": "results"
+  },
+  "device_used": "cuda",
+  "categories": [
+    "bottle",
+    "screw"
+  ],
+  "split_sizes": {
+    "train": 462,
+    "val": 155,
+    "test": 155
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6588466242278294,
+      "val_f1": 0.6477272727272727,
+      "val_acc": 0.6774193548387096,
+      "val_auc": 0.8376087952359139
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.4263653148175318,
+      "val_f1": 0.8191143050181193,
+      "val_acc": 0.8774193548387097,
+      "val_auc": 0.9539624370132844
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.28211126886146926,
+      "val_f1": 0.8460009935419772,
+      "val_acc": 0.896774193548387,
+      "val_auc": 0.9026568941823179
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.26352868658123596,
+      "val_f1": 0.8042576222262312,
+      "val_acc": 0.864516129032258,
+      "val_auc": 0.9363261566651397
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.16235091386451608,
+      "val_f1": 0.8579438244649307,
+      "val_acc": 0.8903225806451613,
+      "val_auc": 0.9365551992670637
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.13867815832297006,
+      "val_f1": 0.8381549044898962,
+      "val_acc": 0.8903225806451613,
+      "val_auc": 0.9354099862574439
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.11560011168062945,
+      "val_f1": 0.8140000000000001,
+      "val_acc": 0.8838709677419355,
+      "val_auc": 0.8648648648648648
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.15183858334760128,
+      "val_f1": 0.8185719859539602,
+      "val_acc": 0.864516129032258,
+      "val_auc": 0.9198350893266147
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.15787611201857077,
+      "val_f1": 0.8358508444345354,
+      "val_acc": 0.8774193548387097,
+      "val_auc": 0.923957856161246
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.14250944100030058,
+      "val_f1": 0.8588709677419355,
+      "val_acc": 0.9096774193548387,
+      "val_auc": 0.9065506184150252
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.11569675341958091,
+      "val_f1": 0.8304569761789014,
+      "val_acc": 0.8838709677419355,
+      "val_auc": 0.9475492441594138
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.07940956572820614,
+      "val_f1": 0.8431174089068827,
+      "val_acc": 0.8838709677419355,
+      "val_auc": 0.9468621163536419
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.0417255705375692,
+      "val_f1": 0.8540031397174255,
+      "val_acc": 0.9032258064516129,
+      "val_auc": 0.9434264773247825
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.03731655840685357,
+      "val_f1": 0.8447168365843597,
+      "val_acc": 0.8903225806451613,
+      "val_auc": 0.9532753092075126
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.05975738058100531,
+      "val_f1": 0.842479674796748,
+      "val_acc": 0.896774193548387,
+      "val_auc": 0.9530462666055887
+    }
+  ],
+  "test": {
+    "accuracy": 0.8709677419354839,
+    "precision": 0.8488136574074074,
+    "recall": 0.7761108566193312,
+    "f1": 0.803099593495935,
+    "roc_auc": 0.9278515803939532,
+    "pr_auc": 0.837289185911472,
+    "defect_recall": 0.5945945945945946,
+    "good_recall": 0.9576271186440678,
+    "confusion_matrix": [
+      [
+        113,
+        5
+      ],
+      [
+        15,
+        22
+      ]
+    ]
+  },
+  "per_defect_type": {
+    "broken_large": {
+      "n": 5,
+      "predicted_defect": 1.0
+    },
+    "broken_small": {
+      "n": 4,
+      "predicted_defect": 1.0
+    },
+    "contamination": {
+      "n": 4,
+      "predicted_defect": 1.0
+    },
+    "good": {
+      "n": 118,
+      "predicted_defect": 0.0423728813559322
+    },
+    "manipulated_front": {
+      "n": 5,
+      "predicted_defect": 0.0
+    },
+    "scratch_head": {
+      "n": 7,
+      "predicted_defect": 0.5714285714285714
+    },
+    "scratch_neck": {
+      "n": 2,
+      "predicted_defect": 1.0
+    },
+    "thread_side": {
+      "n": 5,
+      "predicted_defect": 0.4
+    },
+    "thread_top": {
+      "n": 5,
+      "predicted_defect": 0.2
+    }
+  },
+  "test_images": [
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\broken_large\\004.png",
+      "category": "bottle",
+      "defect_type": "broken_large",
+      "label": 1,
+      "prob_defect": 0.9999421834945679
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\broken_large\\005.png",
+      "category": "bottle",
+      "defect_type": "broken_large",
+      "label": 1,
+      "prob_defect": 0.9990112781524658
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\broken_large\\011.png",
+      "category": "bottle",
+      "defect_type": "broken_large",
+      "label": 1,
+      "prob_defect": 0.9999364614486694
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\broken_large\\016.png",
+      "category": "bottle",
+      "defect_type": "broken_large",
+      "label": 1,
+      "prob_defect": 0.9999997615814209
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\broken_large\\019.png",
+      "category": "bottle",
+      "defect_type": "broken_large",
+      "label": 1,
+      "prob_defect": 0.9999984502792358
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\broken_small\\003.png",
+      "category": "bottle",
+      "defect_type": "broken_small",
+      "label": 1,
+      "prob_defect": 0.9999885559082031
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\broken_small\\010.png",
+      "category": "bottle",
+      "defect_type": "broken_small",
+      "label": 1,
+      "prob_defect": 0.9999544620513916
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\broken_small\\015.png",
+      "category": "bottle",
+      "defect_type": "broken_small",
+      "label": 1,
+      "prob_defect": 0.9999775886535645
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\broken_small\\016.png",
+      "category": "bottle",
+      "defect_type": "broken_small",
+      "label": 1,
+      "prob_defect": 0.9973485469818115
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\contamination\\002.png",
+      "category": "bottle",
+      "defect_type": "contamination",
+      "label": 1,
+      "prob_defect": 0.9973297119140625
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\contamination\\005.png",
+      "category": "bottle",
+      "defect_type": "contamination",
+      "label": 1,
+      "prob_defect": 0.9999890327453613
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\contamination\\008.png",
+      "category": "bottle",
+      "defect_type": "contamination",
+      "label": 1,
+      "prob_defect": 0.999981164932251
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\contamination\\016.png",
+      "category": "bottle",
+      "defect_type": "contamination",
+      "label": 1,
+      "prob_defect": 0.9982178807258606
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\good\\006.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.714053750038147
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\test\\good\\019.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.4348447024822235
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\001.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0010190606117248535
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\003.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.04965296760201454
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\004.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0027296270709484816
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\007.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0007012425339780748
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\008.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0209326334297657
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\014.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.008887016214430332
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\022.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.039027195423841476
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\023.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.003389153629541397
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\025.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0034243925474584103
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\040.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.00977438222616911
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\042.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.027130888774991035
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\043.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.11812371760606766
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\051.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.012432740069925785
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\052.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.004118833225220442
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\065.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.007887217216193676
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\071.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.046445444226264954
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\072.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.02158249355852604
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\076.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.004610454197973013
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\078.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.010609323158860207
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\079.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.026329314336180687
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\091.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.015052735805511475
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\092.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.010056811384856701
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\093.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0931120365858078
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\094.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.03122951276600361
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\098.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.026482466608285904
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\101.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.002908348338678479
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\106.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0014685470378026366
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\110.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0005918264505453408
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\112.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.011464090086519718
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\119.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.005057207308709621
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\132.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.09403865784406662
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\139.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.022811319679021835
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\142.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.011791975237429142
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\144.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.013283979147672653
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\149.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0031541294883936644
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\151.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.005762822460383177
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\157.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.004371697548776865
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\162.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0015830007614567876
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\163.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.07009923458099365
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\168.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.13692136108875275
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\177.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.02197401225566864
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\180.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.02210427075624466
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\198.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.002692090580239892
+    },
+    {
+      "path": "data\\raw\\mvtec\\bottle\\train\\good\\204.png",
+      "category": "bottle",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.012292006984353065
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\good\\005.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.00039578418363817036
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\good\\006.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.000216825443203561
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\good\\009.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.03547213599085808
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\good\\017.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0007951323059387505
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\good\\025.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0032010970171540976
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\good\\030.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.06141584739089012
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\manipulated_front\\010.png",
+      "category": "screw",
+      "defect_type": "manipulated_front",
+      "label": 1,
+      "prob_defect": 0.40402936935424805
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\manipulated_front\\012.png",
+      "category": "screw",
+      "defect_type": "manipulated_front",
+      "label": 1,
+      "prob_defect": 0.12406599521636963
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\manipulated_front\\014.png",
+      "category": "screw",
+      "defect_type": "manipulated_front",
+      "label": 1,
+      "prob_defect": 0.3959127962589264
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\manipulated_front\\019.png",
+      "category": "screw",
+      "defect_type": "manipulated_front",
+      "label": 1,
+      "prob_defect": 0.01890573836863041
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\manipulated_front\\022.png",
+      "category": "screw",
+      "defect_type": "manipulated_front",
+      "label": 1,
+      "prob_defect": 0.0407235249876976
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\scratch_head\\002.png",
+      "category": "screw",
+      "defect_type": "scratch_head",
+      "label": 1,
+      "prob_defect": 0.09595547616481781
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\scratch_head\\004.png",
+      "category": "screw",
+      "defect_type": "scratch_head",
+      "label": 1,
+      "prob_defect": 0.6589921712875366
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\scratch_head\\007.png",
+      "category": "screw",
+      "defect_type": "scratch_head",
+      "label": 1,
+      "prob_defect": 0.07194540649652481
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\scratch_head\\010.png",
+      "category": "screw",
+      "defect_type": "scratch_head",
+      "label": 1,
+      "prob_defect": 0.845233678817749
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\scratch_head\\012.png",
+      "category": "screw",
+      "defect_type": "scratch_head",
+      "label": 1,
+      "prob_defect": 0.29765161871910095
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\scratch_head\\016.png",
+      "category": "screw",
+      "defect_type": "scratch_head",
+      "label": 1,
+      "prob_defect": 0.5511334538459778
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\scratch_head\\018.png",
+      "category": "screw",
+      "defect_type": "scratch_head",
+      "label": 1,
+      "prob_defect": 0.6773462295532227
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\scratch_neck\\004.png",
+      "category": "screw",
+      "defect_type": "scratch_neck",
+      "label": 1,
+      "prob_defect": 0.9978664517402649
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\scratch_neck\\016.png",
+      "category": "screw",
+      "defect_type": "scratch_neck",
+      "label": 1,
+      "prob_defect": 0.8827136754989624
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\thread_side\\000.png",
+      "category": "screw",
+      "defect_type": "thread_side",
+      "label": 1,
+      "prob_defect": 0.5773830413818359
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\thread_side\\007.png",
+      "category": "screw",
+      "defect_type": "thread_side",
+      "label": 1,
+      "prob_defect": 0.003921017050743103
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\thread_side\\008.png",
+      "category": "screw",
+      "defect_type": "thread_side",
+      "label": 1,
+      "prob_defect": 0.10377176851034164
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\thread_side\\020.png",
+      "category": "screw",
+      "defect_type": "thread_side",
+      "label": 1,
+      "prob_defect": 0.8788224458694458
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\thread_side\\021.png",
+      "category": "screw",
+      "defect_type": "thread_side",
+      "label": 1,
+      "prob_defect": 0.19684481620788574
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\thread_top\\005.png",
+      "category": "screw",
+      "defect_type": "thread_top",
+      "label": 1,
+      "prob_defect": 0.1998090296983719
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\thread_top\\009.png",
+      "category": "screw",
+      "defect_type": "thread_top",
+      "label": 1,
+      "prob_defect": 0.03643418848514557
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\thread_top\\017.png",
+      "category": "screw",
+      "defect_type": "thread_top",
+      "label": 1,
+      "prob_defect": 0.17219305038452148
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\thread_top\\021.png",
+      "category": "screw",
+      "defect_type": "thread_top",
+      "label": 1,
+      "prob_defect": 0.8917534351348877
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\test\\thread_top\\022.png",
+      "category": "screw",
+      "defect_type": "thread_top",
+      "label": 1,
+      "prob_defect": 0.2718280851840973
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\015.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.00799899734556675
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\017.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.00010568383004283533
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\019.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.01662766933441162
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\021.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.014521278440952301
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\022.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.00015643337974324822
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\024.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0019817196298390627
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\025.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.008004727773368359
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\028.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.9035005569458008
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\033.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.09209448844194412
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\038.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.00025466043734923005
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\046.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 2.7919097192352638e-05
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\056.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.04829041287302971
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\059.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0022236669901758432
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\064.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.050357718020677567
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\067.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.07564201951026917
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\069.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.00010461697092978284
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\070.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 3.696311614476144e-05
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\074.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0016974620521068573
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\091.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.006044487468898296
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\094.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0025891833938658237
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\095.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.03771882876753807
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\099.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0014559458941221237
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\100.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.10501910001039505
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\101.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.015363429673016071
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\110.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 1.7942043996299617e-05
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\113.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.018091978505253792
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\116.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 9.874756506178528e-05
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\117.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.032791055738925934
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\125.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.01763821579515934
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\126.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.00044585185241885483
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\131.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.001983056776225567
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\144.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0007379959570243955
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\146.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.18072298169136047
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\154.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.002245988231152296
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\155.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.011256135068833828
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\161.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.005823304411023855
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\166.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.02786119468510151
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\169.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.054300516843795776
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\171.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.001202163752168417
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\178.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0005609278450720012
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\192.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 4.096964039490558e-05
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\206.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.00011057879601139575
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\220.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 9.406944445800036e-05
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\231.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.00013769663928542286
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\233.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.6499395370483398
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\236.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0004376862198114395
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\237.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0018835354130715132
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\242.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0009771372424438596
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\243.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0004212477069813758
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\248.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 4.689299657911761e-06
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\259.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.455843448638916
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\266.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.0003378015826456249
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\267.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.1599215269088745
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\268.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.19339801371097565
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\271.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.014458469115197659
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\276.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.003752567805349827
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\283.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.00394202396273613
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\284.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.003224503481760621
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\288.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.02970772236585617
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\291.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.5993649363517761
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\294.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.03245684131979942
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\304.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.2975875735282898
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\309.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.8646113276481628
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\312.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.07205472886562347
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\316.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.08753558993339539
+    },
+    {
+      "path": "data\\raw\\mvtec\\screw\\train\\good\\318.png",
+      "category": "screw",
+      "defect_type": "good",
+      "label": 0,
+      "prob_defect": 0.19411709904670715
+    }
+  ]
+}
