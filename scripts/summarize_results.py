@@ -16,6 +16,8 @@ def collect(results_dir: Path) -> pd.DataFrame:
     for p in sorted(results_dir.glob("*.json")):
         r = json.loads(p.read_text())
         a = r["args"]
+        if "mode" not in a or "split" not in a:  # RUL / vision result files have their own format
+            continue
         base = {"mode": a["mode"], "task": a.get("task", "fault"), "split": a["split"],
                 "seed": a["seed"]}
         for variant, key in (("full", "test"), ("sensor hidden", "test_missing_sensor"),
