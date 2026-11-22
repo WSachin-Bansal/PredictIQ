@@ -50,3 +50,25 @@ def score_windows(bundle, vib: np.ndarray, aud: np.ndarray, hide_sensor=False, h
         return None, None
     out = bundle["model"](inp)
     return out["fault_logits"].softmax(-1).numpy(), out["severity_logits"].softmax(-1).numpy()
+
+
+# ------------------------------------------------------------------ vision (MVTec)
+def load_vision(tag: str):
+    """checkpoints/<tag>.pt -> dict(model, size). No pretrained download: weights come from the file."""
+    from predictiq.models.vision_clf import VisionClassifier
+    ck = torch.load(ROOT / "checkpoints" / f"{tag}.pt", map_location="cpu", weights_only=False)
+    v = ck["vision_cfg"]
+    model = VisionClassifier(v["backbone"], False, v["embed_dim"])
+    model.load_state_dict(ck["model"])
+    model.eval()
+    return {"model": model, "size": ck["image_size"], "categories": ck["categories"]}
+
+
+def diagnose_image(bundle, pil_image, target=None):
+    """-> (P(defect), Grad-CAM heatmap (size, size) in [0,1], RGB uint8 image used by the model)."""
+    from predictiq.data.vision import eval_transform
+    from predictiq.explain.gradcam import gradcam
+    size = bundle["size"]
+    img = pil_image.convert("RGB").resize((size, size))
+    cam, probs, _ = gradcam(bundle["model"], eval_transform(size)(img).unsqueeze(0), target)
+    return float(probs[1]), cam, np.asarray(img)
