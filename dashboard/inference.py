@@ -95,3 +95,42 @@ def predict_rul(bundle, windows: np.ndarray) -> np.ndarray:
     out = [bundle["model"](torch.from_numpy(windows[i:i + 512].astype("float32"))).squeeze(-1)
            for i in range(0, len(windows), 512)]
     return torch.cat(out).numpy() * 125.0
+
+
+# ------------------------------------------------------------------ architecture tables
+def layer_table(mode: str):
+    """Real FaultNet for `mode` (sensor | audio | fusion) -> (layers DataFrame, total params).
+
+    One row per leaf layer in execution order, with output shape for ONE example and its
+    parameter count, collected with forward hooks on a dummy input.
+    """
+    import pandas as pd
+    cfg = yaml.safe_load(open(ROOT / "configs" / "default.yaml"))
+    m, a = cfg["mafaulda"], cfg["audio"]
+    mods = {"sensor": ("sensor",), "audio": ("audio",), "fusion": ("sensor", "audio")}[mode]
+    model = FaultNet(mods, 10, m["n_severity"], m["n_vib_channels"], m["embed_dim"], m["hidden"],
+                     m["dropout"], m["modality_dropout"]).eval()
+    n_vib = int(m["vib_rate"] * m["win_seconds"])
+    frames = int(m["audio_rate"] * m["win_seconds"]) // a["hop_length"] + 1
+    inputs = {}
+    if "sensor" in mods:
+        inputs["sensor"] = torch.randn(1, m["n_vib_channels"], n_vib)
+    if "audio" in mods:
+        inputs["audio"] = torch.randn(1, 1, a["n_mels"], frames)
+    rows, hooks = [], []
+
+    def make(name, mod):
+        def hook(_mod, _inp, out):
+            rows.append({"layer": name, "type": type(mod).__name__,
+                         "output shape": "x".join(str(s) for s in out.shape[1:]),
+                         "params": sum(p.numel() for p in mod.parameters(recurse=False))})
+        return hook
+
+    for name, mod in model.named_modules():
+        if name and not list(mod.children()):
+            hooks.append(mod.register_forward_hook(make(name, mod)))
+    with torch.no_grad():
+        model(inputs)
+    for h in hooks:
+        h.remove()
+    return pd.DataFrame(rows), sum(p.numel() for p in model.parameters())
