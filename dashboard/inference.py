@@ -72,3 +72,26 @@ def diagnose_image(bundle, pil_image, target=None):
     img = pil_image.convert("RGB").resize((size, size))
     cam, probs, _ = gradcam(bundle["model"], eval_transform(size)(img).unsqueeze(0), target)
     return float(probs[1]), cam, np.asarray(img)
+
+
+# ------------------------------------------------------------------ RUL (C-MAPSS)
+def load_rul(tag: str):
+    """checkpoints/<tag>.pt (written by train_cmapss.py) -> dict(model, features, mean, std, window)."""
+    import torch.nn as nn
+    from predictiq.models.encoders import SensorEncoder
+    ck = torch.load(ROOT / "checkpoints" / f"{tag}.pt", map_location="cpu", weights_only=False)
+    s = ck["sensor_cfg"]
+    model = nn.Sequential(SensorEncoder(len(ck["features"]), s["hidden"], s["layers"], s["dropout"],
+                                        s["embed_dim"]), nn.Linear(s["embed_dim"], 1))
+    model.load_state_dict(ck["model"])
+    model.eval()
+    return {"model": model, "features": ck["features"], "mean": ck["mean"], "std": ck["std"],
+            "window": ck["window"], "max_rul": ck["max_rul"]}
+
+
+@torch.no_grad()
+def predict_rul(bundle, windows: np.ndarray) -> np.ndarray:
+    """windows (T, window, F) normalised -> predicted RUL in cycles (T,)."""
+    out = [bundle["model"](torch.from_numpy(windows[i:i + 512].astype("float32"))).squeeze(-1)
+           for i in range(0, len(windows), 512)]
+    return torch.cat(out).numpy() * 125.0
